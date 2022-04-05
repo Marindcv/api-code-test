@@ -55,9 +55,7 @@ public class ReplacedNumber {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
-        string.append("FizzBuzz [");
         string.append(createFizzBuzz());
-        string.append("]");
         return String.valueOf(string);
     }
 }

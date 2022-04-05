@@ -3,8 +3,6 @@ package com.apicodetest.controller;
 import com.apicodetest.model.FizzBuzzDAO;
 import com.apicodetest.model.ReplacedNumber;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -18,15 +16,15 @@ public class FizzBuzzController {
     @Autowired
     private FizzBuzzDAO fizzBuzzDAO;
 
-    @Bean
-    public FizzBuzzDAO getAppName(@Value("${spring.application.name}") String appName) {//TODO pas sur de ça
-        return () -> appName;
-    }
-
     @GetMapping(path = "/",
             produces = "application/json")
     public ReplacedNumber getReplacedNumber() {
         return fizzBuzzDAO.getFizzBuzz(); //TODO return toString
+    }
+
+    @GetMapping(path = "/result", produces = "application/json")
+    public String getReplacedNumberToString() {
+        return fizzBuzzDAO.getFizzBuzz().toString();
     }
 
     @PostMapping(path = "/",

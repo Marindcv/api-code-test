@@ -22,4 +22,7 @@ public class FizzBuzz {
         return fizzbuzzList;
     }
 
+    public int size() {
+        return fizzbuzzList.size();
+    }
 }

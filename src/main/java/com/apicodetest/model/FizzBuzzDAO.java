@@ -12,6 +12,6 @@ public class FizzBuzzDAO {
     }
 
     public ReplacedNumber getFizzBuzz() {
-        return list.getFizzBuzzList().get(-1);
+        return list.getFizzBuzzList().get(list.size() - 1);
     }
 }
