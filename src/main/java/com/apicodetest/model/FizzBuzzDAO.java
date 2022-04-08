@@ -12,6 +12,23 @@ public class FizzBuzzDAO {
     }
 
     public ReplacedNumber getFizzBuzz() {
-        return list.getFizzBuzzList().get(list.size() - 1);
+        try {
+            return list.getFizzBuzzList().get(list.size() - 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public int getStatInt1() {
+        return list.intMax(list.createInt1List());
+    }
+
+    public int getStatInt2() {
+        return list.intMax(list.createInt2List());
+    }
+
+    public int getStatLimit() {
+        return list.intMax(list.createLimitList());
     }
 }

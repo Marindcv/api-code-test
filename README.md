@@ -18,4 +18,3 @@ Liste des sites dont je me suis aidé:
   tard) : https://mkyong.com/java/java-get-the-last-element-of-a-list/
 * Je sais plus exactement pourquoi, mais c'etait dans mes onglets ouvert donc ça à du m'aider à un
   moment : https://www.baeldung.com/building-a-restful-web-service-with-spring-and-java-based-configuration
-* 
