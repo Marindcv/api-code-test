@@ -54,20 +54,66 @@ public class FizzBuzz {
         return arr;
     }
 
-    public int intMax(List<Integer> arr) {
-        int max = 0;
-        for (int i : arr) {
-            int maxj = 0;
-            for (int j : arr) {
-                maxj = i == j ? maxj : maxj++;
-            }
-            max = maxj > max ? i : max;
+    public List<String> createStr1List() {
+        List<String> arr = new ArrayList<String>();
+        for (int i = 0; i < fizzbuzzList.size(); i++) {
+            arr.add(fizzbuzzList.get(i).getStr1());
         }
-        if (max == 0) {
-            max = arr.get(0);
-        }
-        return max;
+        return arr;
     }
 
+    public List<String> createStr2List() {
+        List<String> arr = new ArrayList<String>();
+        for (int i = 0; i < fizzbuzzList.size(); i++) {
+            arr.add(fizzbuzzList.get(i).getStr2());
+        }
+        return arr;
+    }
+
+    public int intMax(List<Integer> arr) {
+        int mostFrequentNumber = 0;
+        int frequency = 0;
+        for (int i : arr) {
+            int mostFrequentNumberJ = 0;
+            int frequencyJ = 0;
+            for (int j : arr) {
+                if (i == j) {
+                    frequencyJ++;
+                    mostFrequentNumberJ = i;
+                }
+            }
+            if (frequencyJ > frequency) {
+                frequency = frequencyJ;
+                mostFrequentNumber = mostFrequentNumberJ;
+            }
+        }
+        if (mostFrequentNumber == 0) {
+            mostFrequentNumber = arr.get(0);
+        }
+        return mostFrequentNumber;
+    }
+
+    public String strMax(List<String> arr) {
+        String mostFrequentString = new String();
+        int frequency = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            String mostFrequentStringJ = new String();
+            int frequencyJ = 0;
+            for (int j = 0; j < arr.size(); j++) {
+                if (arr.get(i) == arr.get(j)) {
+                    frequencyJ++;
+                    mostFrequentStringJ = arr.get(i);
+                }
+            }
+            if (frequencyJ > frequency) {
+                frequency = frequencyJ;
+                mostFrequentString = mostFrequentStringJ;
+            }
+        }
+        if (mostFrequentString == null) {
+            mostFrequentString = arr.get(0);
+        }
+        return mostFrequentString;
+    }
 
 }

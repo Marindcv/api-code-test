@@ -12,11 +12,6 @@ public class FizzBuzzController {
     @Autowired
     private FizzBuzzDAO fizzBuzzDAO;
 
-    @GetMapping(path = "/result", produces = "application/json")
-    public String getReplacedNumberToString() {
-        return fizzBuzzDAO.getFizzBuzz().toString();
-    }
-
     @GetMapping(path = "/stat", produces = "application/json")
     public String getStat() {
         StringBuilder sb = new StringBuilder();
@@ -28,6 +23,12 @@ public class FizzBuzzController {
         sb.append("\n");
         sb.append("Most frequent Limit : ");
         sb.append(fizzBuzzDAO.getStatLimit());
+        sb.append("\n");
+        sb.append("Most frequent str1 : ");
+        sb.append(fizzBuzzDAO.getStatStr1());
+        sb.append("\n");
+        sb.append("Most frequent str2 : ");
+        sb.append(fizzBuzzDAO.getStatStr2());
         return String.valueOf(sb);
     }
 

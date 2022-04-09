@@ -31,4 +31,12 @@ public class FizzBuzzDAO {
     public int getStatLimit() {
         return list.intMax(list.createLimitList());
     }
+
+    public String getStatStr1() {
+        return list.strMax(list.createStr1List());
+    }
+
+    public String getStatStr2() {
+        return list.strMax(list.createStr2List());
+    }
 }
