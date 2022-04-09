@@ -39,4 +39,8 @@ public class FizzBuzzDAO {
     public String getStatStr2() {
         return list.strMax(list.createStr2List());
     }
+
+    public String getSize() {
+        return String.valueOf(list.size());
+    }
 }

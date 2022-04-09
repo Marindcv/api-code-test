@@ -29,6 +29,9 @@ public class FizzBuzzController {
         sb.append("\n");
         sb.append("Most frequent str2 : ");
         sb.append(fizzBuzzDAO.getStatStr2());
+        sb.append("\n");
+        sb.append("Number of POST call : ");
+        sb.append(fizzBuzzDAO.getSize());
         return String.valueOf(sb);
     }
 
