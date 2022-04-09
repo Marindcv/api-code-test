@@ -2,6 +2,8 @@ package com.apicodetest.model;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class FizzBuzzDAO {
 
@@ -20,23 +22,23 @@ public class FizzBuzzDAO {
         }
     }
 
-    public int getStatInt1() {
+    public List<Integer> getStatInt1() {
         return list.intMax(list.createInt1List());
     }
 
-    public int getStatInt2() {
+    public List<Integer> getStatInt2() {
         return list.intMax(list.createInt2List());
     }
 
-    public int getStatLimit() {
+    public List<Integer> getStatLimit() {
         return list.intMax(list.createLimitList());
     }
 
-    public String getStatStr1() {
+    public List<String> getStatStr1() {
         return list.strMax(list.createStr1List());
     }
 
-    public String getStatStr2() {
+    public List<String> getStatStr2() {
         return list.strMax(list.createStr2List());
     }
 

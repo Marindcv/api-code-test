@@ -70,7 +70,8 @@ public class FizzBuzz {
         return arr;
     }
 
-    public int intMax(List<Integer> arr) {
+    public List<Integer> intMax(List<Integer> arr) {
+        List<Integer> resultList = new ArrayList<>();
         int mostFrequentNumber = 0;
         int frequency = 0;
         for (int i : arr) {
@@ -89,11 +90,15 @@ public class FizzBuzz {
         }
         if (mostFrequentNumber == 0) {
             mostFrequentNumber = arr.get(0);
+            frequency = 1;
         }
-        return mostFrequentNumber;
+        resultList.add(mostFrequentNumber);
+        resultList.add(frequency);
+        return resultList;
     }
 
-    public String strMax(List<String> arr) {
+    public List<String> strMax(List<String> arr) {
+        List<String> resultList = new ArrayList<>();
         String mostFrequentString = new String();
         int frequency = 0;
         for (int i = 0; i < arr.size(); i++) {
@@ -112,8 +117,11 @@ public class FizzBuzz {
         }
         if (mostFrequentString == null) {
             mostFrequentString = arr.get(0);
+            frequency = 1;
         }
-        return mostFrequentString;
+        resultList.add(mostFrequentString);
+        resultList.add(String.valueOf(frequency));
+        return resultList;
     }
 
 }
