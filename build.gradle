@@ -26,6 +26,10 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
+wrapper {
+    gradleVersion = '7.4'
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
