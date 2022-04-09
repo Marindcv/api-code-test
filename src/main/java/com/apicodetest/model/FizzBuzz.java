@@ -105,7 +105,7 @@ public class FizzBuzz {
             String mostFrequentStringJ = new String();
             int frequencyJ = 0;
             for (int j = 0; j < arr.size(); j++) {
-                if (arr.get(i) == arr.get(j)) {
+                if (arr.get(i).equals(arr.get(j))) {
                     frequencyJ++;
                     mostFrequentStringJ = arr.get(i);
                 }
