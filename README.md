@@ -19,6 +19,7 @@ Body :
 "str2": "buzz"
 }
 ```
+(export Postmann disponnible) : Api-code-test.postman_collection.json
 
 ### Les Site dont je me suis aidé:
 
@@ -48,3 +49,4 @@ Body :
   * https://www.youtube.com/watch?v=7bnyth4ayS8
   * https://devcenter.heroku.com/articles/procfile
   * https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl
+  * https://stackoverflow.com/questions/27715404/deploying-a-gradle-app-to-heroku
