@@ -4,10 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @Getter
@@ -72,53 +71,31 @@ public class FizzBuzz {
 
     public List<Integer> intMax(List<Integer> arr) {
         List<Integer> resultList = new ArrayList<>();
-        int mostFrequentNumber = 0;
-        int frequency = 0;
-        for (int i : arr) {
-            int mostFrequentNumberJ = 0;
-            int frequencyJ = 0;
-            for (int j : arr) {
-                if (i == j) {
-                    frequencyJ++;
-                    mostFrequentNumberJ = i;
-                }
-            }
-            if (frequencyJ > frequency) {
-                frequency = frequencyJ;
-                mostFrequentNumber = mostFrequentNumberJ;
-            }
-        }
-        if (mostFrequentNumber == 0) {
-            mostFrequentNumber = arr.get(0);
-            frequency = 1;
-        }
-        resultList.add(mostFrequentNumber);
+
+        Map<Integer, Long> f = arr
+                .stream()
+                .collect(Collectors.groupingBy(v -> v, Collectors.counting()));
+        Integer maxOccurence =
+                Collections.max(f.entrySet(), Comparator.comparing(Map.Entry::getValue)).getKey();
+        Integer frequency =
+                Collections.max(f.entrySet(), Comparator.comparing(Map.Entry::getValue)).getValue().intValue();
+
+        resultList.add(maxOccurence);
         resultList.add(frequency);
         return resultList;
     }
 
     public List<String> strMax(List<String> arr) {
         List<String> resultList = new ArrayList<>();
-        String mostFrequentString = new String();
-        int frequency = 0;
-        for (int i = 0; i < arr.size(); i++) {
-            String mostFrequentStringJ = new String();
-            int frequencyJ = 0;
-            for (int j = 0; j < arr.size(); j++) {
-                if (arr.get(i).equals(arr.get(j))) {
-                    frequencyJ++;
-                    mostFrequentStringJ = arr.get(i);
-                }
-            }
-            if (frequencyJ > frequency) {
-                frequency = frequencyJ;
-                mostFrequentString = mostFrequentStringJ;
-            }
-        }
-        if (mostFrequentString == null) {
-            mostFrequentString = arr.get(0);
-            frequency = 1;
-        }
+
+        Map<String, Long> f = arr
+                .stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        String mostFrequentString =
+                Collections.max(f.entrySet(), Map.Entry.comparingByValue()).getKey();
+        Integer frequency =
+                Collections.max(f.entrySet(), Comparator.comparing(Map.Entry::getValue)).getValue().intValue();
+
         resultList.add(mostFrequentString);
         resultList.add(String.valueOf(frequency));
         return resultList;
