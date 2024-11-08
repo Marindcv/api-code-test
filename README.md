@@ -50,3 +50,8 @@ Body :
   * https://devcenter.heroku.com/articles/procfile
   * https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl
   * https://stackoverflow.com/questions/27715404/deploying-a-gradle-app-to-heroku
+* Streams :
+  * https://www.tutorialspoint.com/java8/java8_streams.htm
+  * https://stackoverflow.com/questions/38021061/how-to-use-if-else-logic-in-java-8-stream-foreach
+* Map
+  * https://stackoverflow.com/questions/13550441/getting-the-key-and-its-specific-value-from-map
